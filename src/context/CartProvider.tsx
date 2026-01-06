@@ -12,16 +12,17 @@ type CartStateType = { cart: CartItemType[]}
 const initCartState: CartStateType = {cart: []}
 
 const REDUCER_ACTION_TYPE = {
-    ADD: "ADD",
-    REMOVE: "REMOVE",
-    QUANTITY: "QUANTITY",
-    SUBMIT: "SUBMIT",
-}
+  ADD: "ADD",
+  REMOVE: "REMOVE",
+  QUANTITY: "QUANTITY",
+  SUBMIT: "SUBMIT",
+} as const
+
 
 export type ReducerActionType = typeof REDUCER_ACTION_TYPE
 
 export type ReducerAction = {
-    type: keyof ReducerActionType,
+    type:ReducerActionType [keyof ReducerActionType],
     payload?: CartItemType,
 }
 
@@ -116,6 +117,8 @@ type ChildrenType = { children?: ReactElement | ReactElement[]}
 export const CartProvider = ({children}: ChildrenType):
 ReactElement => {
     return(
-        <CartContext.Provider value={useCartContext(initCartState)}> {children} </CartContext.Provider>
+        <CartContext.Provider value={useCartContext(initCartState)}> 
+        {children} 
+        </CartContext.Provider>
     )
 }

@@ -9,18 +9,18 @@ export type ProductType = {
 const initState: ProductType[] = [
   {
     sku: "item001",
-    name: "Widget",
-    price: 9.99,
+    name: "Tuberose- Eau De Perfume",
+    price: 9500,
   },
   {
     sku: "item002",
-    name: "Premium Widget",
-    price: 19.99,
+    name: "Island Rose -Eau De Perfume",
+    price: 9200,
   },
   {
     sku: "item003",
-    name: "Deluxe Widget",
-    price: 29.99,
+    name: "Mirissa Eau De Perfume",
+    price: 9500,
   },
 ]
 

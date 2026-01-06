@@ -1,6 +1,6 @@
 import React, { type ReactElement } from 'react'
-import { ProductType } from '../context/ProductProvider'
-import { ReducerAction, ReducerActionType } from '../context/CartProvider'
+import type { ProductType } from '../context/ProductProvider'
+import type{ ReducerAction, ReducerActionType, CartItemType } from '../context/CartProvider'
 
 type PropsType = {
   product: ProductType
@@ -24,7 +24,7 @@ const Product = ({
   const onAddToCart = () =>
     dispatch({
       type: REDUCER_ACTIONS.ADD,
-      payload: { ...product, qty: 1 },
+      payload: { ...product, qty: 1 } as CartItemType,
     })
 
   const itemInCart = inCart ? ' → In Cart' : null
