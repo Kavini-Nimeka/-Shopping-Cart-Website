@@ -8,7 +8,9 @@ const Nav = ({viewCart, setViewCart}: PropsType) => {
     ? <button onClick={() => setViewCart(false)}>View Products</button>
     : <button onClick={() => setViewCart(true)}>View Cart</button>
     return (
-        <div>Nav</div>
+        <div>
+            {button}
+        </div>
     )
 }
 
