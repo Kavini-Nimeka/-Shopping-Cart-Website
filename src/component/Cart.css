@@ -1,0 +1,113 @@
+/* Container Layout */
+.main--cart {
+    padding: 4rem 10%;
+    min-height: 80vh;
+    background-color: #ffffff; /* Clean white background for the cart list */
+    color: #1a1a1a;
+    font-family: 'Playfair Display', serif; /* Pair with an elegant serif */
+}
+
+.offscreen {
+    position: absolute;
+    left: -10000px;
+}
+
+h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    letter-spacing: 1px;
+    color: #2c2c2c;
+}
+
+/* Cart List Styling */
+.cart {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 900px;
+    border-top: 1px solid #e0e0e0;
+}
+
+/* Individual Item (assuming CartLineItem uses <li>) */
+.cart__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 0;
+    border-bottom: 1px solid #f0f0f0;
+    transition: background 0.3s ease;
+}
+
+/* Totals Section */
+.cart__totals {
+    max-width: 900px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background-color: #1a1a1a; /* Dark charcoal like the website footer */
+    color: #f4e8d1; /* Champagne/Cream text */
+    text-align: right;
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.cart__totals p {
+    font-size: 1.1rem;
+    margin: 0.5rem 0;
+    font-family: 'Inter', sans-serif; /* Clean sans-serif for numbers */
+}
+
+.cart__totals p:last-of-type {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-top: 1rem;
+    color: #d4af37; /* Metallic Gold */
+}
+
+/* Call to Action Button */
+.cart__submit {
+    margin-top: 2rem;
+    padding: 1rem 3rem;
+    background-color: #d4af37;
+    color: #1a1a1a;
+    border: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cart__submit:hover:not(:disabled) {
+    background-color: #f4e8d1;
+    transform: translateY(-2px);
+}
+
+.cart__submit:disabled {
+    background-color: #444;
+    color: #777;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* Success Message */
+h2:only-child {
+    padding-top: 10rem;
+    color: #d4af37;
+    animation: fadeIn 0.8s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .main--cart {
+        padding: 2rem 5%;
+    }
+    .cart__totals {
+        text-align: center;
+    }
+}

@@ -1,6 +1,8 @@
 import useCart from "../hooks/useCart"
 import { useState } from "react"
 import CartLineItem from "./CartLineItem"
+import Swal from "sweetalert2"
+import './Cart.css'
 
 const Cart = () => {
     const [confirm, setConfirm] = useState<boolean>(false)
@@ -8,11 +10,19 @@ const Cart = () => {
 
     const onSubmitOrder = () =>{
         dispatch({ type: REDUCER_ACTIONS.SUBMIT})
+
+        Swal.fire({
+            title: " Order Placed!",
+            text: "Thank you for your order 🧴",
+            icon: "success",
+            confirmButtonText: "OK",
+            confirmButtonColor: "#422C81",
+        })
         setConfirm(true)
     }
 
     const pageContent = confirm
-    ? <h2>Thank you for your order</h2>
+    ? null
     :<>
     <h2 className="offscreen">Cart</h2>
     <ul className="cart">

@@ -2,6 +2,7 @@ import useCart from "../hooks/useCart"
 import useProducts from "../hooks/useProducts"
 import Product from "./Product"
 import { type ReactElement } from "react"
+import './Product.css'
 
 const ProductList = (): ReactElement => {
   const { dispatch, REDUCER_ACTIONS, cart } = useCart()
@@ -25,7 +26,13 @@ const ProductList = (): ReactElement => {
     })
   }
 
-  return <main className="main main--products">{pageContent}</main>
+  return <main className="main main--products">
+    <section className="product">
+      <div className="box-container">
+    {pageContent}
+    </div>
+    </section>
+    </main>
 }
 
 export default ProductList

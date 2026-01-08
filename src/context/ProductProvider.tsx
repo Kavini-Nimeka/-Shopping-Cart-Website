@@ -22,6 +22,21 @@ const initState: ProductType[] = [
     name: "Mirissa Eau De Perfume",
     price: 9500,
   },
+  {
+    sku: "item004",
+    name: "Royal Lotus- Eau De Perfume",
+    price: 9200,
+  },
+  {
+    sku: "item005",
+    name: "Moonlight Blooms - Eau De Perfume",
+    price: 14900,
+  },
+  {
+    sku: "item006",
+    name: "Blue Men's Eau De Perfume",
+    price: 11000,
+  },
 ]
 
 export type UseProductsContextType = { products: ProductType[] }

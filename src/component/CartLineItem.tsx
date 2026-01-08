@@ -2,7 +2,8 @@ import type React from "react"
 import type { CartItemType } from "../context/CartProvider"
 import type{ ReducerAction } from "../context/CartProvider"
 import type{ ReducerActionType } from "../context/CartProvider"
-import type { ChangeEvent, ReactElement } from "react"
+import { memo, type ChangeEvent, type ReactElement } from "react"
+import'./CartLineItem.css'
 
 type PropsType = {
     item: CartItemType,
@@ -65,7 +66,7 @@ const onRemoveFromCart = () =>
                 aria-label="Remove Item from Cart"
                 title="Remove Item from Cart"
                 onClick={onRemoveFromCart}>
-            *
+           ❌
         </button>
         </div>
     </li>
@@ -76,4 +77,17 @@ const onRemoveFromCart = () =>
   return content
 }
 
-export default CartLineItem
+function areItemsEqual(
+    { item: prevItem}: PropsType,
+    {item: nextItem}: PropsType
+    ){
+    return Object.keys(prevItem).every(key => {
+        return (
+            prevItem[key as keyof CartItemType] === 
+            nextItem[key as keyof CartItemType])
+    })
+}
+
+const MemoizedCartLineItem = memo<typeof CartLineItem> (CartLineItem, areItemsEqual)
+
+export default MemoizedCartLineItem
