@@ -9,22 +9,22 @@ export type ProductType = {
 const initState: ProductType[] = [
   {
     sku: "item001",
-    name: "Tuberose- Eau De Perfume",
+    name: "Tuberose - Eau De Perfume",
     price: 9500,
   },
   {
     sku: "item002",
-    name: "Island Rose -Eau De Perfume",
+    name: "Island Rose - Eau De Perfume",
     price: 9200,
   },
   {
     sku: "item003",
-    name: "Mirissa Eau De Perfume",
+    name: "Mirissa Beach Eau - De Perfume",
     price: 9500,
   },
   {
     sku: "item004",
-    name: "Royal Lotus- Eau De Perfume",
+    name: "Royal Lotus - Eau De Perfume",
     price: 9200,
   },
   {

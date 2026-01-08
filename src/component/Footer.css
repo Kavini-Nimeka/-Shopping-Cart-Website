@@ -11,13 +11,12 @@
     z-index: 100;
 }
 
-/* Footer text */
+
 .footer p {
     margin: 0;
     letter-spacing: 0.5px;
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
     .footer {
         font-size: 0.85rem;

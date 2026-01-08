@@ -30,7 +30,7 @@ const Product = ({
       payload: { ...product, qty: 1 } as CartItemType,
     })
 
-  const itemInCart = inCart ? ' → In Cart' : null
+  const itemInCart = inCart ?'': null
 
   const content =
       <div className='box'>
@@ -38,8 +38,8 @@ const Product = ({
       <img src={img} alt={product.name} className="product__img" />
       <div className='icons'>
         <a href='#'><FontAwesomeIcon icon={faHeart} /></a>
-        <button onClick={onAddToCart} className="cart-btn">
-  <FontAwesomeIcon icon={faCartShopping} /></button>
+        <a onClick={onAddToCart} className="cart-btn">
+  <FontAwesomeIcon icon={faCartShopping} /></a>
         <a href='#'><FontAwesomeIcon icon={faShare} /></a>
       </div>
       <div className='content'>
