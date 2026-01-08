@@ -1,6 +1,7 @@
 import useCart from "../hooks/useCart"
 import useProducts from "../hooks/useProducts"
 import Product from "./Product"
+
 import { type ReactElement } from "react"
 import './Product.css'
 
@@ -12,7 +13,7 @@ const ProductList = (): ReactElement => {
 
   if (products?.length) {
     pageContent = products.map((product) => {
-      const inCart: boolean = cart.some((item) => item.sku === product.sku)
+      const inCart: boolean = cart.some(item => item.sku === product.sku)
 
       return (
         <Product
@@ -26,13 +27,17 @@ const ProductList = (): ReactElement => {
     })
   }
 
-  return <main className="main main--products">
-    <section className="product">
-      <div className="box-container">
-    {pageContent}
-    </div>
-    </section>
+  const content = (
+    <main className="main main--products">
+      <section className="product">
+        <div className="box-container">
+          {pageContent}
+        </div>
+      </section>
     </main>
+  )
+
+  return content
 }
 
 export default ProductList
